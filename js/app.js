@@ -378,7 +378,7 @@
           <span class="階段標">${目前重點.圖示} 重點 ${目前重點.編號}　${目前重點.標題}</span>
           <span class="階段badge 短片中">🎬 主題短片　${v.標題}</span>
         </div>
-        <video id="重點短片" class="重點短片" src="${v.檔}" controls playsinline preload="metadata"></video>
+        <video id="重點短片" class="重點短片" src="${v.檔}${資源v()}" controls playsinline preload="metadata"></video>
         <div class="按鈕列 置中">
           <button class="次要鈕" id="鈕回教學">← 回教學頁</button>
           <button class="次要鈕" id="鈕重播短片">↺ 再看一次</button>
@@ -869,7 +869,7 @@
     $("#版本標").className = "版本標 " + (CONFIG.版本 === "教室版" ? "教室" : "公開");
     $("#單元標題").textContent = UNIT.單元名稱;
     $("#單元資訊").textContent = `${UNIT.領域}　${UNIT.學期}　${UNIT.週次}`;
-    $("#影片播放器").src = UNIT.資源.影片;
+    $("#影片播放器").src = UNIT.資源.影片 + 資源v();
 
     工具.初始化();
     延伸.畫();        /* ★ 要在 初始化分頁() 之前，沒有延伸影片時才來得及移除導覽鈕 */
