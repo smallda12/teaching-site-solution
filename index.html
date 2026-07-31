@@ -6,7 +6,7 @@
 <title>水溶液大觀園｜教學網</title>
 <!-- 內嵌的分頁小圖示，順便避免每次載入都對 favicon.ico 發出 404 -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧪</text></svg>">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -118,8 +118,14 @@
 <section class="分區" id="區影片">
   <h2>🎬 教學影片</h2>
   <div class="卡片">
-    <video id="影片播放器" class="影片" controls playsinline preload="metadata"></video>
-    <p class="小字">影片內含字幕。點播放鍵開始，右下角可切換全螢幕。</p>
+    <div class="影片區塊">
+      <div class="影片主體">
+        <video id="影片播放器" class="影片" controls playsinline preload="metadata"></video>
+        <p class="小字" id="影片說明">影片內含字幕。點播放鍵開始，右下角可切換全螢幕。</p>
+      </div>
+      <!-- 播放清單：主影片＋各重點短片，由 app.js 依 data.js 自動產生 -->
+      <div class="影片清單" id="影片清單"></div>
+    </div>
   </div>
 </section>
 
@@ -269,10 +275,10 @@
 <canvas id="畫布" class="畫布"></canvas>
 
 <!-- 改版時把 v 加 1，避免瀏覽器沿用舊快取 -->
-<script src="js/config.js?v=3"></script>
-<script src="js/data.js?v=3"></script>
-<script src="js/speech.js?v=3"></script>
-<script src="js/tools.js?v=3"></script>
-<script src="js/app.js?v=3"></script>
+<script src="js/config.js?v=4"></script>
+<script src="js/data.js?v=4"></script>
+<script src="js/speech.js?v=4"></script>
+<script src="js/tools.js?v=4"></script>
+<script src="js/app.js?v=4"></script>
 </body>
 </html>

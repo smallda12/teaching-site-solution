@@ -184,6 +184,30 @@ input[type=text]:focus, textarea:focus { border-color: var(--綠); outline: none
 /* ---------- 三、影片 ---------- */
 .影片 { width: 100%; border-radius: 14px; background: #000; display: block; }
 
+/* 影片播放清單（2026-07-31 老師指定）：主影片旁邊列出各重點短片，學生自己切換。
+   清單項目數依單元而異（四個或五個重點，有的重點沒有短片），
+   所以按鈕是 app.js 依 data.js 產生的，不要寫死在 HTML。 */
+.影片區塊 { display: flex; gap: 18px; align-items: flex-start; }
+.影片主體 { flex: 1 1 auto; min-width: 0; }
+.影片清單 { flex: 0 0 320px; display: flex; flex-direction: column; gap: 10px; }
+.影片鈕 {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  text-align: left; font-family: inherit; font-size: 22px; font-weight: 700;
+  color: var(--字); background: var(--白); border: 3px solid var(--綠淺);
+  border-radius: 14px; padding: 12px 14px; cursor: pointer; line-height: 1.3;
+}
+.影片鈕:hover { background: var(--綠背); }
+.影片鈕.播放中 { background: var(--綠); border-color: var(--綠深); color: #fff; }
+.影片鈕 .清單圖示 { font-size: 30px; flex: 0 0 auto; }
+.影片鈕 .清單標題 { flex: 1 1 auto; }
+.影片清單標 { font-size: 20px; font-weight: 700; color: var(--灰); margin: 0 0 2px; }
+
+/* 直式或窄螢幕：清單移到影片下方 */
+@media (max-width: 900px) {
+  .影片區塊 { flex-direction: column; }
+  .影片清單 { flex: 1 1 auto; width: 100%; }
+}
+
 /* ---------- 四、教學區 ---------- */
 .進度卡 { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .進度卡 .按鈕列 { margin-top: 0; }
